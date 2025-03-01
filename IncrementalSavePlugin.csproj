@@ -44,23 +44,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="FrostyControls">
-      <HintPath>D:\Development\repos\Dyvinia\FrostyToolsuite\FrostyEditor\bin\Release\Final\FrostyControls.dll</HintPath>
-    </Reference>
-    <Reference Include="FrostyCore">
-      <HintPath>D:\Development\repos\Dyvinia\FrostyToolsuite\FrostyEditor\bin\Release\Final\FrostyCore.dll</HintPath>
-    </Reference>
-    <Reference Include="FrostyHash">
-      <HintPath>D:\Development\repos\Dyvinia\FrostyToolsuite\FrostyEditor\bin\Release\Final\FrostyHash.dll</HintPath>
-    </Reference>
-    <Reference Include="FrostySdk">
-      <HintPath>D:\Development\repos\Dyvinia\FrostyToolsuite\FrostyEditor\bin\Release\Final\FrostySdk.dll</HintPath>
-    </Reference>
-    <Reference Include="FrostyEditor">
-      <HintPath>D:\Development\repos\Dyvinia\FrostyToolsuite\FrostyEditor\bin\Release\Final\FrostyEditor.exe</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>D:\Development\repos\Dyvinia\FrostyToolsuite\FrostyModManager\bin\Developer\Debug\ThirdParty\Newtonsoft.Json.dll</HintPath>
+    <ProjectReference Include="..\FrostyToolsuite\FrostyControls\FrostyControls.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\FrostyToolsuite\FrostyPlugin\FrostyCore.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\FrostyToolsuite\FrostySdk\FrostySdk.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\FrostyToolsuite\FrostyEditor\FrostyEditor.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FrostyToolsuite\FrostyEditor\ThirdParty\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationCore" />
@@ -70,8 +68,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="Images\SaveInc.png" />
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /Y $(TargetPath) D:\Development\repos\Dyvinia\FrostyToolsuite\FrostyEditor\bin\Release\Final\Plugins\" />
+    <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)$(OutDir)Plugins\&quot;" />
   </Target>
 
 </Project>

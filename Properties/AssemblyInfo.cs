@@ -21,8 +21,8 @@ using IncrementalSavePlugin;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("4b612468-9b6a-4304-88a5-055c3575eb3d")]
 
-[assembly: PluginDisplayName("Incremental Saves Plugin")]
+[assembly: PluginDisplayName("Incremental Saves")]
 [assembly: PluginAuthor("Dyvinia")]
-[assembly: PluginVersion("1.0.0")]
+[assembly: PluginVersion("1.1.0")]
 
-[assembly: RegisterMenuExtension(typeof(IncrementalSaveMenuExtension))]
+[assembly: RegisterToolbarExtension(typeof(IncrementalSaveToolbarExtension))]
